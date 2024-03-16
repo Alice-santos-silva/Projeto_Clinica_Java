@@ -22,7 +22,8 @@ public class Paciente {
 	    consultaCardiologista = possuiConvenio ? 90 : 150;
 	    return consultaCardiologista;
 	}
-	
+
+	 
 	public String getNome() {
 		return nome;
 	}
