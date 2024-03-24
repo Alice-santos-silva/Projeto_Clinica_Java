@@ -3,14 +3,38 @@ package br.edu.infnet.alicesilva.model.domain;
 public class Paciente {
 	private String nome;
 	private int idade;
-	private int numeroProntuario;
+	private Endereco endereco;
+	private String numeroProntuario;
 	private boolean possuiConvenio;
-	private String dataTratamento;
+	/*private String dataTratamento;*/
 	private float consultaCG;
 	private float consultaCardiologista;
+	
+	public Paciente(String nome) {
+		this.setNome(nome);
+	}
+	 
+	public Paciente(String nome, String numeroProntuario, Endereco endereco) {
+		this.setNome(nome);
+		this.setNumeroProntuario(numeroProntuario);
+		this.setEndereco(endereco);
+	}
+	
+	@Override
+	public String toString(){
+		return "Nome do paciente: " + nome + " Endereço: " + endereco;
+	}
+	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
 	public boolean solicitarConsulta() {
-        return numeroProntuario > 0 && idade > 10;
+        return idade > 10;
     }
 	
 	public float descontoClinicoGeral() {
@@ -44,10 +68,10 @@ public class Paciente {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public int getNumeroProntuario() {
+	public String getNumeroProntuario() {
 		return numeroProntuario;
 	}
-	public void setNumeroProntuario(int numeroProntuario) {
+	public void setNumeroProntuario(String numeroProntuario) {
 		this.numeroProntuario = numeroProntuario;
 	}
 	public boolean isPossuiConvenio() {
@@ -56,12 +80,12 @@ public class Paciente {
 	public void setPossuiConvenio(boolean possuiConvenio) {
 		this.possuiConvenio = possuiConvenio;
 	}
-	public String getDataTratamento() {
-		return dataTratamento;
+	/*public String getDataTratamento() {
+		return getDataTratamento();
 	}
 	public void setDataTratamento(String dataTratamento) {
 		this.dataTratamento = dataTratamento;
-	}
+	}*/
 	public float getConsultaCardiologista() {
 		return consultaCardiologista;
 	}

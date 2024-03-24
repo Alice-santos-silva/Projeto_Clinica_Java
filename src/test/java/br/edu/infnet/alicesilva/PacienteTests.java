@@ -16,29 +16,29 @@ public class PacienteTests {
 	
 	@BeforeEach
 	void setUp() {
-		pacientePadrao = new Paciente();
+		pacientePadrao = new Paciente(DATATRATAMENTO, null, null);
 		pacientePadrao.setNome(NOME);
-		pacientePadrao.setDataTratamento(DATATRATAMENTO);
+		/*pacientePadrao.setDataTratamento(DATATRATAMENTO);*/
 		pacientePadrao.setPossuiConvenio(false);
 	}
 	 
 	@Test
 	void possuiProntuario() {
-		pacientePadrao.setNumeroProntuario(2024001);
-		assertEquals(2024001, pacientePadrao.getNumeroProntuario());
+		pacientePadrao.setNumeroProntuario("2024001");
+		assertEquals("2024001", pacientePadrao.getNumeroProntuario());
 	}
 	
 	@Test
     void testSolicitarConsulta() {
         pacientePadrao.setIdade(20);
-        pacientePadrao.setNumeroProntuario(2024001);
+        pacientePadrao.setNumeroProntuario("2024001");
         assertTrue(pacientePadrao.solicitarConsulta());
     }
 
     @Test
     void testSolicitarConsultaMenorIdade() {
         pacientePadrao.setIdade(10);
-        pacientePadrao.setNumeroProntuario(2024001);
+        pacientePadrao.setNumeroProntuario("2024001");
         assertFalse(pacientePadrao.solicitarConsulta());
     }
 

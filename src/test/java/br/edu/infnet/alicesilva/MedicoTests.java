@@ -17,7 +17,7 @@ public class MedicoTests {
 
     @BeforeEach
     void setUp() {
-        medicoPadrao = new Medico(NOME, ESPECIALIDADE, HORARIO_TRABALHO, VALOR_CONSULTA);
+        medicoPadrao = new Medico(NOME, ESPECIALIDADE, HORARIO_TRABALHO, VALOR_CONSULTA, null);
     }
 
     @Test
